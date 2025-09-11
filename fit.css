@@ -1,0 +1,86 @@
+  * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .mirror-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .mirror-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .mirror-reflection {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mirror-reflection::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .mirror-reflection:hover::before {
+            left: 100%;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ef4444;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .upload-zone {
+            border: 2px dashed #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .upload-zone:hover {
+            border-color: #4f46e5;
+            background-color: #f8fafc;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .size-selector {
+            transition: all 0.2s;
+        }
+        
+        .size-selector:hover {
+            transform: scale(1.1);
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200px 0; }
+            100% { background-position: calc(200px + 100%) 0; }
+        }
+        
+        .loading-shimmer {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+        }
