@@ -1,86 +1,133 @@
-  * {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .mirror-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        .mirror-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .mirror-reflection {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .mirror-reflection::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-        
-        .mirror-reflection:hover::before {
-            left: 100%;
-        }
-        
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: #ef4444;
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .upload-zone {
-            border: 2px dashed #667eea;
-            transition: all 0.3s ease;
-        }
-        
-        .upload-zone:hover {
-            border-color: #4f46e5;
-            background-color: #f8fafc;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        
-        .size-selector {
-            transition: all 0.2s;
-        }
-        
-        .size-selector:hover {
-            transform: scale(1.1);
-        }
-        
-        .testimonial-card {
-            background: linear-gradient(145deg, #f8fafc, #e2e8f0);
-        }
-        
-        @keyframes shimmer {
-            0% { background-position: -200px 0; }
-            100% { background-position: calc(200px + 100%) 0; }
-        }
-        
-        .loading-shimmer {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200px 100%;
-            animation: shimmer 1.5s infinite;
-        }
+ /* Base Styles using Tailwind preflight essentially, adding specific overrides */
+.mirror-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.mirror-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.mirror-reflection {
+    position: relative;
+    overflow: hidden;
+}
+.mirror-reflection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+.mirror-reflection:hover::before {
+    left: 100%;
+}
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ef4444;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.upload-zone {
+    border: 2px dashed #667eea;
+    transition: all 0.3s ease;
+}
+.upload-zone:hover {
+    border-color: #4f46e5;
+    background-color: #f8fafc;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+/* --- INTERACTIVE CANVAS STYLES (REQUIRED FOR TRY-ON) --- */
+/* These must be preserved/added to ensure the interactive JS works */
+.active-clothing-container {
+    position: absolute;
+    user-select: none;
+    cursor: move;
+    z-index: 10;
+    touch-action: none;
+    /* Initial generic size for items added */
+    width: 200px;
+}
+.active-clothing-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    /* simluates transparency on white backgrounds */
+}
+/* Selection Box */
+.selection-box {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid #3B82F6;
+    /* Tailwind Blue-500 */
+    display: none;
+}
+.active-clothing-container.selected .selection-box {
+    display: block;
+}
+/* Handles */
+.resize-handle,
+.rotate-handle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #3B82F6;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    z-index: 11;
+}
+.handle-nw {
+    top: -6px;
+    left: -6px;
+    cursor: nw-resize;
+}
+.handle-ne {
+    top: -6px;
+    right: -6px;
+    cursor: ne-resize;
+}
+.handle-sw {
+    bottom: -6px;
+    left: -6px;
+    cursor: sw-resize;
+}
+.handle-se {
+    bottom: -6px;
+    right: -6px;
+    cursor: se-resize;
+}
+.rotate-handle {
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: grab;
+    background-color: #fff;
+    border-color: #3B82F6;
+}
+.rotate-line {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    height: 20px;
+    width: 2px;
+    background-color: #3B82F6;
+    transform: translateX(-50%);
+}
