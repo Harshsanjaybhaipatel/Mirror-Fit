@@ -1,4 +1,4 @@
- /* Base Styles using Tailwind preflight essentially, adding specific overrides */
+/* Base Styles using Tailwind preflight essentially, adding specific overrides */
 .mirror-gradient {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
@@ -66,8 +66,6 @@
     height: 100%;
     display: block;
     pointer-events: none;
-    mix-blend-mode: multiply;
-    /* simluates transparency on white backgrounds */
 }
 /* Selection Box */
 .selection-box {
