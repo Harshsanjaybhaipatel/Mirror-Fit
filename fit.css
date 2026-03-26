@@ -2,15 +2,18 @@
 .mirror-gradient {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
+
 .mirror-card {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
 .mirror-reflection {
     position: relative;
     overflow: hidden;
 }
+
 .mirror-reflection::before {
     content: '';
     position: absolute;
@@ -21,9 +24,11 @@
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     transition: left 0.5s;
 }
+
 .mirror-reflection:hover::before {
     left: 100%;
 }
+
 .cart-count {
     position: absolute;
     top: -8px;
@@ -38,20 +43,25 @@
     align-items: center;
     justify-content: center;
 }
+
 .upload-zone {
     border: 2px dashed #667eea;
     transition: all 0.3s ease;
 }
+
 .upload-zone:hover {
     border-color: #4f46e5;
     background-color: #f8fafc;
 }
+
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
+
 /* --- INTERACTIVE CANVAS STYLES (REQUIRED FOR TRY-ON) --- */
 /* These must be preserved/added to ensure the interactive JS works */
+
 .active-clothing-container {
     position: absolute;
     user-select: none;
@@ -61,12 +71,14 @@
     /* Initial generic size for items added */
     width: 200px;
 }
+
 .active-clothing-img {
     width: 100%;
     height: 100%;
     display: block;
     pointer-events: none;
 }
+
 /* Selection Box */
 .selection-box {
     position: absolute;
@@ -78,9 +90,11 @@
     /* Tailwind Blue-500 */
     display: none;
 }
+
 .active-clothing-container.selected .selection-box {
     display: block;
 }
+
 /* Handles */
 .resize-handle,
 .rotate-handle {
@@ -92,26 +106,31 @@
     border-radius: 50%;
     z-index: 11;
 }
+
 .handle-nw {
     top: -6px;
     left: -6px;
     cursor: nw-resize;
 }
+
 .handle-ne {
     top: -6px;
     right: -6px;
     cursor: ne-resize;
 }
+
 .handle-sw {
     bottom: -6px;
     left: -6px;
     cursor: sw-resize;
 }
+
 .handle-se {
     bottom: -6px;
     right: -6px;
     cursor: se-resize;
 }
+
 .rotate-handle {
     top: -25px;
     left: 50%;
@@ -120,6 +139,7 @@
     background-color: #fff;
     border-color: #3B82F6;
 }
+
 .rotate-line {
     position: absolute;
     top: -20px;
