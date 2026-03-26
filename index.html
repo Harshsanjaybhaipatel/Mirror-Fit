@@ -30,6 +30,10 @@
                 </nav>
                 <!-- Icons -->
                 <div class="flex items-center space-x-4">
+                    <button id="authBtn" class="text-gray-600 hover:text-blue-600 transition flex items-center" onclick="toggleAuthModal()">
+                        <i id="authIcon" class="fas fa-user text-xl"></i>
+                        <span id="authText" class="hidden md:inline text-sm font-semibold ml-1">Login</span>
+                    </button>
                     <button class="relative text-gray-600 hover:text-blue-600 transition" onclick="toggleCart()">
                         <i class="fas fa-shopping-cart text-xl"></i>
                         <span class="cart-count">3</span>
@@ -166,255 +170,14 @@
                         data-category="formal">Formal</button>
                 </div>
             </div>
-            <!-- Product Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Product 1 -->
-                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300"
-                    data-category="casual">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=600&auto=format&fit=crop"
-                            class="w-full h-64 object-cover">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-semibold text-lg mb-2">Classic White Tee</h3>
-                        <p class="text-gray-600 text-sm mb-3">Essential cotton t-shirt.</p>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-xl font-bold text-blue-600">$29.99</span>
-                        </div>
-                        <div class="flex space-x-2">
-                            <button
-                                class="try-on-btn flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold text-sm"
-                                data-src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=600&auto=format&fit=crop">
-                                <i class="fas fa-magic mr-1"></i> Try On
-                            </button>
-                            <button
-                                class="add-cart-btn flex-1 border border-blue-600 text-blue-600 py-2 rounded-lg hover:bg-blue-50 transition font-semibold text-sm"
-                                data-name="Classic White Tee" data-price="29.99"
-                                data-img="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=200">
-                                <i class="fas fa-shopping-cart mr-1"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product 2 -->
-                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300"
-                    data-category="formal">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1551028919-ac7d214b2edd?q=80&w=600&auto=format&fit=crop"
-                            class="w-full h-64 object-cover">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-semibold text-lg mb-2">Leather Jacket</h3>
-                        <p class="text-gray-600 text-sm mb-3">Premium leather finish.</p>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-xl font-bold text-blue-600">$89.99</span>
-                        </div>
-                        <div class="flex space-x-2">
-                            <button
-                                class="try-on-btn flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold text-sm"
-                                data-src="https://images.unsplash.com/photo-1551028919-ac7d214b2edd?q=80&w=600&auto=format&fit=crop">
-                                <i class="fas fa-magic mr-1"></i> Try On
-                            </button>
-                            <button
-                                class="add-cart-btn flex-1 border border-blue-600 text-blue-600 py-2 rounded-lg hover:bg-blue-50 transition font-semibold text-sm"
-                                data-name="Leather Jacket" data-price="89.99"
-                                data-img="https://images.unsplash.com/photo-1551028919-ac7d214b2edd?q=80&w=200">
-                                <i class="fas fa-shopping-cart mr-1"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product 3 -->
-                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300"
-                    data-category="formal">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=600&auto=format&fit=crop"
-                            class="w-full h-64 object-cover">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-semibold text-lg mb-2">Modern Blazer</h3>
-                        <p class="text-gray-600 text-sm mb-3">Sharp look.</p>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-xl font-bold text-blue-600">$129.99</span>
-                        </div>
-                        <div class="flex space-x-2">
-                            <button
-                                class="try-on-btn flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold text-sm"
-                                data-src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=600&auto=format&fit=crop">
-                                <i class="fas fa-magic mr-1"></i> Try On
-                            </button>
-                            <button
-                                class="add-cart-btn flex-1 border border-blue-600 text-blue-600 py-2 rounded-lg hover:bg-blue-50 transition font-semibold text-sm"
-                                data-name="Modern Blazer" data-price="129.99"
-                                data-img="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=200">
-                                <i class="fas fa-shopping-cart mr-1"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product 4 -->
-                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300" data-category="casual">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=600&auto=format&fit=crop" class="w-full h-64 object-cover">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-semibold text-lg mb-2">Black Tee</h3>
-                        <p class="text-gray-600 text-sm mb-3">Urban style.</p>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-xl font-bold text-blue-600">$34.99</span>
-                        </div>
-                        <div class="flex space-x-2">
-                             <button class="try-on-btn flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold text-sm" 
-                                data-src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=600&auto=format&fit=crop">
-                                <i class="fas fa-magic mr-1"></i> Try On
-                            </button>
-                             <button class="add-cart-btn flex-1 border border-blue-600 text-blue-600 py-2 rounded-lg hover:bg-blue-50 transition font-semibold text-sm"
-                                data-name="Black Tee" data-price="34.99" data-img="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=200">
-                                <i class="fas fa-shopping-cart mr-1"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product 5: White Polo -->
-                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300" data-category="casual">
-                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1626557981101-aae6f84aa6ff?q=80&w=600&auto=format&fit=crop" class="w-full h-64 object-cover">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-semibold text-lg mb-2">Classic Polo</h3>
-                        <p class="text-gray-600 text-sm mb-3">Smart casual essential.</p>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-xl font-bold text-blue-600">$45.00</span>
-                        </div>
-                        <div class="flex space-x-2">
-                             <button class="try-on-btn flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold text-sm" 
-                                data-src="https://images.unsplash.com/photo-1626557981101-aae6f84aa6ff?q=80&w=600&auto=format&fit=crop">
-                                <i class="fas fa-magic mr-1"></i> Try On
-                            </button>
-                             <button class="add-cart-btn flex-1 border border-blue-600 text-blue-600 py-2 rounded-lg hover:bg-blue-50 transition font-semibold text-sm"
-                                data-name="Classic Polo" data-price="45.00" data-img="https://images.unsplash.com/photo-1626557981101-aae6f84aa6ff?q=80&w=200">
-                                <i class="fas fa-shopping-cart mr-1"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product 6: Denim Jacket -->
-                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300" data-category="casual">
-                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?q=80&w=600&auto=format&fit=crop" class="w-full h-64 object-cover">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-semibold text-lg mb-2">Denim Jacket</h3>
-                        <p class="text-gray-600 text-sm mb-3">Rugged style.</p>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-xl font-bold text-blue-600">$79.99</span>
-                        </div>
-                        <div class="flex space-x-2">
-                             <button class="try-on-btn flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold text-sm" 
-                                data-src="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?q=80&w=600&auto=format&fit=crop">
-                                <i class="fas fa-magic mr-1"></i> Try On
-                            </button>
-                             <button class="add-cart-btn flex-1 border border-blue-600 text-blue-600 py-2 rounded-lg hover:bg-blue-50 transition font-semibold text-sm"
-                                data-name="Denim Jacket" data-price="79.99" data-img="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?q=80&w=200">
-                                <i class="fas fa-shopping-cart mr-1"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product 7: Black Hoodie -->
-                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300" data-category="casual">
-                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=600&auto=format&fit=crop" class="w-full h-64 object-cover">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-semibold text-lg mb-2">Black Hoodie</h3>
-                        <p class="text-gray-600 text-sm mb-3">Comfort & style.</p>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-xl font-bold text-blue-600">$59.99</span>
-                        </div>
-                        <div class="flex space-x-2">
-                             <button class="try-on-btn flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold text-sm" 
-                                data-src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=600&auto=format&fit=crop">
-                                <i class="fas fa-magic mr-1"></i> Try On
-                            </button>
-                             <button class="add-cart-btn flex-1 border border-blue-600 text-blue-600 py-2 rounded-lg hover:bg-blue-50 transition font-semibold text-sm"
-                                data-name="Black Hoodie" data-price="59.99" data-img="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=200">
-                                <i class="fas fa-shopping-cart mr-1"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product 8: Blue Suit -->
-                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300" data-category="formal">
-                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c47e356?q=80&w=600&auto=format&fit=crop" class="w-full h-64 object-cover">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-semibold text-lg mb-2">Blue Suit</h3>
-                        <p class="text-gray-600 text-sm mb-3">For sharp occasions.</p>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-xl font-bold text-blue-600">$199.99</span>
-                        </div>
-                        <div class="flex space-x-2">
-                             <button class="try-on-btn flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold text-sm" 
-                                data-src="https://images.unsplash.com/photo-1594938298603-c8148c47e356?q=80&w=600&auto=format&fit=crop">
-                                <i class="fas fa-magic mr-1"></i> Try On
-                            </button>
-                             <button class="add-cart-btn flex-1 border border-blue-600 text-blue-600 py-2 rounded-lg hover:bg-blue-50 transition font-semibold text-sm"
-                                data-name="Blue Suit" data-price="199.99" data-img="https://images.unsplash.com/photo-1594938298603-c8148c47e356?q=80&w=200">
-                                <i class="fas fa-shopping-cart mr-1"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product 9: Grey Blazer -->
-                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300" data-category="formal">
-                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1505022610485-0249ba5b3675?q=80&w=600&auto=format&fit=crop" class="w-full h-64 object-cover">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-semibold text-lg mb-2">Grey Blazer</h3>
-                        <p class="text-gray-600 text-sm mb-3">Versatile formal wear.</p>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-xl font-bold text-blue-600">$110.00</span>
-                        </div>
-                        <div class="flex space-x-2">
-                             <button class="try-on-btn flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold text-sm" 
-                                data-src="https://images.unsplash.com/photo-1505022610485-0249ba5b3675?q=80&w=600&auto=format&fit=crop">
-                                <i class="fas fa-magic mr-1"></i> Try On
-                            </button>
-                             <button class="add-cart-btn flex-1 border border-blue-600 text-blue-600 py-2 rounded-lg hover:bg-blue-50 transition font-semibold text-sm"
-                                data-name="Grey Blazer" data-price="110.00" data-img="https://images.unsplash.com/photo-1505022610485-0249ba5b3675?q=80&w=200">
-                                <i class="fas fa-shopping-cart mr-1"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product 10: Formal Waistcoat -->
-                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300" data-category="formal">
-                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?q=80&w=600&auto=format&fit=crop" class="w-full h-64 object-cover">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-semibold text-lg mb-2">Formal Waistcoat</h3>
-                        <p class="text-gray-600 text-sm mb-3">Classic addition.</p>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-xl font-bold text-blue-600">$85.00</span>
-                        </div>
-                        <div class="flex space-x-2">
-                             <button class="try-on-btn flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold text-sm" 
-                                data-src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?q=80&w=600&auto=format&fit=crop">
-                                <i class="fas fa-magic mr-1"></i> Try On
-                            </button>
-                             <button class="add-cart-btn flex-1 border border-blue-600 text-blue-600 py-2 rounded-lg hover:bg-blue-50 transition font-semibold text-sm"
-                                data-name="Formal Waistcoat" data-price="85.00" data-img="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?q=80&w=200">
-                                <i class="fas fa-shopping-cart mr-1"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <!-- Product Grids -->
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 mt-12 border-b pb-2">Casual T-Shirts</h3>
+            <div id="teesGrid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             </div>
-        </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 mt-8 border-b pb-2">Premium Shirts</h3>
+            <div id="shirtsGrid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            </div> 
+        </div> <!-- End Container -->
     </section>
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
@@ -440,6 +203,29 @@
         </div>
     </div>
     <div id="cartOverlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40" onclick="toggleCart()"></div>
+    <!-- Auth Modal -->
+    <div id="authModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-8 max-w-sm w-full shadow-2xl relative">
+            <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Welcome Back</h2>
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Username</label>
+                    <input type="text" id="username" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="Enter username">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Password</label>
+                    <input type="password" id="password" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="Enter password">
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">
+                    Login
+                </button>
+            </form>
+            <p class="text-xs text-gray-500 text-center mt-4">For demo purposes, any username/password works.</p>
+        </div>
+    </div>
     <script src="Fit.js"></script>
 </body>
 </html>
